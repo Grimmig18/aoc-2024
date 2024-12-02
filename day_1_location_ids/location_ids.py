@@ -1,6 +1,4 @@
-from os import getcwd
 from pathlib import Path
-
 
 
 def get_ids() -> tuple[list[int], list[int]]:

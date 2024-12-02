@@ -1,6 +1,6 @@
-from os import getcwd
 from pathlib import Path
 from typing import Callable
+
 
 with open(Path(__file__).resolve().parent.joinpath('input.txt'), 'r') as file:
     numbers1, numbers2 = [], []
