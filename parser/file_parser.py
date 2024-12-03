@@ -31,7 +31,7 @@ class FileParser[Item]:
         if parser_function is None:
             # Enables default behavior if nothing is passed to parser_function
             # Cannot be provided as "normal" default argument, since it is an object attribute
-            parser_function = self.__default_parser
+            parser_function = FileParser.default_string_parser
         
         self.last_parsed = self.__parse_lines(parser_function, mode)
         return self
@@ -57,9 +57,12 @@ class FileParser[Item]:
                 
         return collection
                 
-    
-    def __default_parser(self, line: str) -> list[int]:
+    @staticmethod
+    def default_int_parser(line: str) -> list[int]:
         # Split at white spaces, return elements as integers
         return [int(element) for element in line.replace('\n', '').split()]
     
     
+    @staticmethod
+    def default_string_parser(line: str) -> list[str]:
+        return [str(element) for element in line.replace('\n', '').split()]
