@@ -59,6 +59,7 @@ class Solver(ParserInterface):
     def add(self, a: int, b: int) -> int:
         return a + b
     
+    
     def concatenate(sel, a: int, b: int) -> int:
         return int(str(a) + str(b))
     
