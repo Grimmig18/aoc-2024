@@ -1,6 +1,6 @@
 from pathlib import Path
 from typing import Literal
-from parser.parser import ParserInterface
+from parser.parser import ProblemParser
 
 InputMode = Literal['INPUT', 'SAMPLE']
 
@@ -21,7 +21,7 @@ class FileParser:
         self.data: list[str] = []
     
     
-    def parse(self, parser: ParserInterface, mode: InputMode = 'SAMPLE') -> ParserInterface:
+    def parse(self, parser: ProblemParser, mode: InputMode = 'SAMPLE') -> ProblemParser:
         file_path = self.input_file_path if mode == 'INPUT' else self.sample_file_path
                 
         with open(file_path, 'r') as file:

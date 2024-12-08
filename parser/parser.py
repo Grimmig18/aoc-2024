@@ -1,6 +1,12 @@
-from abc import ABC, abstractmethod
+class ProblemParser:
+    def __init__(self):
+        self.lines = []
 
-class ParserInterface(ABC):
-    @abstractmethod
+
     def parse_line(self, data: str):
-        pass
+        self.lines.append(data.strip())
+    
+    
+    def print(self):
+        for line in self.lines:
+            print(line)
